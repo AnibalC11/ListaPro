@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ListaPro — Generador de Contenido Inmobiliario</title>
+  <link rel="stylesheet" href="/static/style.css?v=4" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🏠</span>
+        <span class="logo-text">Lista<strong>Pro</strong></span>
+      </div>
+      <p class="logo-sub">Genera contenido profesional para tus propiedades en segundos</p>
+    </div>
+  </header>
+
+  <!-- FORMULARIO -->
+  <main id="main-content">
+    <form id="property-form" enctype="multipart/form-data" novalidate>
+
+      <!-- SECCIÓN 1: Datos de la propiedad -->
+      <section class="form-section">
+        <h2 class="section-title">
+          <span class="section-num">1</span> Datos de la Propiedad
+        </h2>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="tipo">Tipo de propiedad <span class="req">*</span></label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Seleccionar...</option>
+              <option value="Casa">Casa</option>
+              <option value="Departamento">Departamento</option>
+              <option value="Terreno">Terreno</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Operación <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="operacion" value="Venta" required /> Venta
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="operacion" value="Alquiler" /> Alquiler
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="direccion">Dirección / Ubicación <span class="req">*</span></label>
+          <input type="text" id="direccion" name="direccion" placeholder="Ej: Urb. Las Mercedes, Calle Principal" required />
+        </div>
+
+        <div class="form-group">
+          <label for="ciudad_estado">Ciudad y Estado <span class="req">*</span></label>
+          <input type="text" id="ciudad_estado" name="ciudad_estado" placeholder="Ej: Caracas, Distrito Capital" required />
+        </div>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="precio">Precio <span class="req">*</span></label>
+            <input type="text" id="precio" name="precio" placeholder="Ej: 150,000" required />
+          </div>
+          <div class="form-group">
+            <label for="moneda">Moneda <span class="req">*</span></label>
+            <select id="moneda" name="moneda" required>
+              <option value="USD">USD (Dólares)</option>
+              <option value="VES">VES (Bolívares)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: Características -->
+      <section class="form-section">
+        <h2 class="section-title">
+          <span class="section-num">2</span> Características
+        </h2>
+
+        <div class="form-row three-col">
+          <div class="form-group">
+            <label for="recamaras">Recámaras</label>
+            <input type="number" id="recamaras" name="recamaras" min="0" max="20" placeholder="0" />
+          </div>
+          <div class="form-group">
+            <label for="banos">Baños</label>
+            <input type="number" id="banos" name="banos" min="0" max="20" placeholder="0" />
+          </div>
+          <div class="form-group">
+            <label for="estacionamientos">Estacionamientos</label>
+            <input type="number" id="estacionamientos" name="estacionamientos" min="0" max="20" placeholder="0" />
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="m2_construidos">M² Construidos</label>
+            <input type="number" id="m2_construidos" name="m2_construidos" min="0" placeholder="0" />
+          </div>
+          <div class="form-group">
+            <label for="m2_terreno">M² de Terreno</label>
+            <input type="number" id="m2_terreno" name="m2_terreno" min="0" placeholder="0" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: Amenidades -->
+      <section class="form-section">
+        <h2 class="section-title">
+          <span class="section-num">3</span> Amenidades
+        </h2>
+        <div class="checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Alberca" /> Alberca</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Jardín" /> Jardín</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Seguridad 24h" /> Seguridad 24h</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Gimnasio" /> Gimnasio</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Áreas comunes" /> Áreas comunes</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Ascensor" /> Ascensor</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Terraza" /> Terraza</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Maletero" /> Maletero</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Sala de juegos" /> Sala de juegos</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Cancha deportiva" /> Cancha deportiva</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Área de BBQ" /> Área de BBQ</label>
+          <label class="checkbox-label"><input type="checkbox" name="amenidades" value="Planta eléctrica" /> Planta eléctrica</label>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: Descripción del agente -->
+      <section class="form-section">
+        <h2 class="section-title">
+          <span class="section-num">4</span> Notas del Agente
+        </h2>
+        <div class="form-group">
+          <label for="descripcion_agente">¿Qué destaca de esta propiedad? <span class="req">*</span></label>
+          <textarea id="descripcion_agente" name="descripcion_agente" rows="3"
+            placeholder="Ej: Vista panorámica al Ávila, remodelada en 2023, excelente iluminación natural..." required></textarea>
+          <small class="hint">2-3 líneas con los puntos más relevantes. La IA los usará para destacarlos.</small>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: Fotos -->
+      <section class="form-section">
+        <h2 class="section-title">
+          <span class="section-num">5</span> Fotos de la Propiedad
+        </h2>
+        <div class="form-group">
+          <label for="fotos">Seleccionar fotos <span class="req">*</span></label>
+          <div class="file-drop-area" id="file-drop-area">
+            <input type="file" id="fotos" name="fotos" accept="image/*" multiple required />
+            <div class="file-drop-text">
+              <span class="file-icon">📷</span>
+              <span>Arrastra fotos aquí o <strong>haz clic para seleccionar</strong></span>
+              <small>La primera foto será la portada · JPG, PNG, WEBP</small>
+            </div>
+          </div>
+          <div id="photo-preview" class="photo-preview hidden"></div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 6: Datos del agente -->
+      <section class="form-section">
+        <h2 class="section-title">
+          <span class="section-num">6</span> Datos del Agente
+        </h2>
+        <div class="form-row three-col">
+          <div class="form-group">
+            <label for="nombre_agente">Nombre completo <span class="req">*</span></label>
+            <input type="text" id="nombre_agente" name="nombre_agente" placeholder="Ej: María González" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono_agente">Teléfono <span class="req">*</span></label>
+            <input type="tel" id="telefono_agente" name="telefono_agente" placeholder="Ej: +58 412 000 0000" required />
+          </div>
+          <div class="form-group">
+            <label for="email_agente">Email <span class="req">*</span></label>
+            <input type="email" id="email_agente" name="email_agente" placeholder="agente@ejemplo.com" required />
+          </div>
+        </div>
+      </section>
+
+      <!-- BOTÓN SUBMIT -->
+      <div class="submit-area">
+        <button type="submit" id="submit-btn" class="btn-generate">
+          <span id="btn-text">✨ Generar con IA</span>
+          <span id="btn-spinner" class="btn-spinner hidden"></span>
+        </button>
+        <p class="submit-hint">La generación tarda aproximadamente 10-15 segundos</p>
+      </div>
+
+    </form>
+
+    <!-- SECCIÓN DE RESULTADOS -->
+    <section id="results-section" class="hidden">
+
+      <div class="results-header">
+        <h2>Contenido Generado</h2>
+        <p>Copia el texto que necesites y pégalo donde quieras publicar</p>
+      </div>
+
+      <!-- Foto portada -->
+      <div id="foto-result" class="result-foto hidden">
+        <img id="foto-portada-img" src="" alt="Foto portada de la propiedad" />
+        <span class="foto-badge">📌 Foto portada</span>
+      </div>
+
+      <!-- Descripción profesional -->
+      <div class="result-card">
+        <div class="result-card-header">
+          <div class="result-card-title">
+            <span class="result-icon">📄</span>
+            <h3>Descripción Profesional</h3>
+          </div>
+          <button class="btn-copy" data-target="descripcion-text">Copiar</button>
+        </div>
+        <div class="result-card-body">
+          <p id="descripcion-text" class="result-text"></p>
+        </div>
+      </div>
+
+      <!-- Copy Instagram -->
+      <div class="result-card">
+        <div class="result-card-header">
+          <div class="result-card-title">
+            <span class="result-icon">📱</span>
+            <h3>Copy para Instagram</h3>
+          </div>
+          <button class="btn-copy" data-target="instagram-text">Copiar</button>
+        </div>
+        <div class="result-card-body">
+          <p id="instagram-text" class="result-text"></p>
+        </div>
+      </div>
+
+      <!-- Agente -->
+      <div id="agente-info" class="agente-card">
+        <span class="agente-icon">👤</span>
+        <div>
+          <strong id="agente-nombre"></strong>
+          <span id="agente-contacto"></span>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="submit-area results-actions">
+        <button type="button" id="btn-pdf" class="btn-pdf">
+          <span id="btn-pdf-text">⬇ Descargar PDF</span>
+          <span id="btn-pdf-spinner" class="btn-spinner hidden"></span>
+        </button>
+        <button type="button" id="btn-instagram-img" class="btn-instagram-img">
+          <span id="btn-ig-text">📷 Imagen Instagram</span>
+          <span id="btn-ig-spinner" class="btn-spinner hidden"></span>
+        </button>
+        <button type="button" id="btn-publish-ig" class="btn-publish-ig">
+          <span id="btn-pub-text">🚀 Publicar en Instagram</span>
+          <span id="btn-pub-spinner" class="btn-spinner hidden"></span>
+        </button>
+        <button type="button" id="btn-video" class="btn-video">
+          <span id="btn-video-text">🎬 Generar Video</span>
+          <span id="btn-video-spinner" class="btn-spinner hidden"></span>
+        </button>
+        <button type="button" id="btn-restart" class="btn-restart">← Generar otra propiedad</button>
+      </div>
+
+    </section>
+
+    <!-- TOAST DE NOTIFICACIÓN -->
+    <div id="toast" class="toast hidden">
+      <span id="toast-icon"></span>
+      <span id="toast-msg"></span>
+    </div>
+
+    <!-- MODAL DE PROGRESO DEL VIDEO -->
+    <div id="video-progress-modal" class="hidden">
+      <div class="vp-box">
+        <div class="vp-icon">🎬</div>
+        <p class="vp-title">Generando Video Reel...</p>
+        <div class="vp-bar-track">
+          <div id="vp-bar" class="vp-bar"></div>
+        </div>
+        <p id="vp-pct" class="vp-pct">0%</p>
+        <small class="vp-hint">Esto puede tomar 1–3 minutos · No cierres esta página</small>
+      </div>
+    </div>
+
+    <!-- OVERLAY DE CARGA -->
+    <div id="loading-overlay" class="hidden">
+      <div class="loading-box">
+        <div class="spinner"></div>
+        <p>Generando contenido con IA...</p>
+        <small>Esto puede tardar unos segundos</small>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>ListaPro &copy; 2025 · Herramienta interna para agentes inmobiliarios</p>
+  </footer>
+
+  <script src="/static/script.js?v=4"></script>
+</body>
+</html>
